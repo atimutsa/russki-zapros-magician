@@ -45,8 +45,12 @@ const Header = ({ openModal }: HeaderProps) => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center">
-          <a href="/" className="text-2xl font-bold text-primary">
-            Тимлекс
+          <a href="/" className="flex items-center">
+            <img 
+              src="/lovable-uploads/058e03b5-8fb5-4bf5-bfed-e3786ee979d5.png" 
+              alt="Тимлекс" 
+              className="h-10 w-auto"
+            />
           </a>
         </div>
 

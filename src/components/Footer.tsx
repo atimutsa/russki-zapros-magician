@@ -37,7 +37,13 @@ const Footer = () => {
       <div className="container relative mx-auto px-4 z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
-            <h3 className="text-2xl font-bold text-white mb-4">Тимлекс</h3>
+            <div className="mb-4">
+              <img 
+                src="/lovable-uploads/058e03b5-8fb5-4bf5-bfed-e3786ee979d5.png" 
+                alt="Тимлекс" 
+                className="h-10 w-auto"
+              />
+            </div>
             <p className="mb-4">
               Агентство ИИ-коммуникаций для бизнеса. Автоматизируем общение с клиентами с помощью современных технологий.
             </p>
