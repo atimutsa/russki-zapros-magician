@@ -1,12 +1,40 @@
 
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion, useAnimationControls } from "framer-motion";
+import { useEffect, useState } from "react";
 
 interface HeroSectionProps {
   openModal: () => void;
 }
 
 const HeroSection = ({ openModal }: HeroSectionProps) => {
+  const [text, setText] = useState("");
+  const fullText = "ИИ-коммуникации для вашего бизнеса";
+  const controls = useAnimationControls();
+
+  // Typing effect with random pauses
+  useEffect(() => {
+    let currentIndex = 0;
+    const targetText = fullText;
+
+    const typeNextCharacter = () => {
+      if (currentIndex < targetText.length) {
+        setText(targetText.substring(0, currentIndex + 1));
+        currentIndex++;
+        
+        // Random delay between 50ms and 150ms to simulate human typing
+        const randomDelay = Math.floor(Math.random() * 100) + 50;
+        setTimeout(typeNextCharacter, randomDelay);
+      } else {
+        // Trigger the rest of the animations when typing is complete
+        controls.start({ opacity: 1, y: 0 });
+      }
+    };
+
+    // Start typing after a short delay
+    setTimeout(typeNextCharacter, 500);
+  }, [fullText, controls]);
+
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden w-full">
       {/* Градиентный фон с анимированными волнами */}
@@ -84,19 +112,17 @@ const HeroSection = ({ openModal }: HeroSectionProps) => {
 
       <div className="container mx-auto px-4 z-10 py-20">
         <div className="max-w-3xl mx-auto text-center">
-          <motion.h1 
+          <h1 
             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
           >
-            ИИ-коммуникации для вашего бизнеса
-          </motion.h1>
+            {text}
+            <span className="animate-pulse">|</span>
+          </h1>
           
           <motion.p 
             className="text-xl md:text-2xl text-gray-100 mb-8"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={controls}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             Голосовые и чат-боты, автоматизация продаж и общения с клиентами
@@ -104,7 +130,7 @@ const HeroSection = ({ openModal }: HeroSectionProps) => {
           
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={controls}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <Button 
@@ -119,7 +145,7 @@ const HeroSection = ({ openModal }: HeroSectionProps) => {
           <motion.div 
             className="mt-12 bg-white/20 backdrop-blur-sm rounded-lg shadow-lg py-4 px-6 inline-flex gap-8 items-center"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={controls}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <div className="text-left">
