@@ -9,13 +9,14 @@ interface HeroSectionProps {
 const HeroSection = ({ openModal }: HeroSectionProps) => {
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Градиентный фон с волнами */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 z-0">
-        <div className="absolute inset-0 opacity-30">
+      {/* Градиентный фон с анимированными волнами */}
+      <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 z-0">
+        <div className="absolute inset-0 w-screen h-full opacity-30">
           <svg 
             viewBox="0 0 1000 1000" 
             xmlns="http://www.w3.org/2000/svg"
             className="w-full h-full"
+            preserveAspectRatio="none"
           >
             <defs>
               <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -23,15 +24,39 @@ const HeroSection = ({ openModal }: HeroSectionProps) => {
                 <stop offset="100%" stopColor="#8b5cf6" />
               </linearGradient>
             </defs>
-            <path 
+            <motion.path 
               d="M0,400 C200,450 400,300 600,450 C800,600 1000,500 1000,500 L1000,1000 L0,1000 Z" 
               fill="url(#gradient)" 
               opacity="0.2"
+              animate={{
+                d: [
+                  "M0,400 C200,450 400,300 600,450 C800,600 1000,500 1000,500 L1000,1000 L0,1000 Z",
+                  "M0,380 C200,470 400,280 600,470 C800,580 1000,500 1000,500 L1000,1000 L0,1000 Z",
+                  "M0,400 C200,450 400,300 600,450 C800,600 1000,500 1000,500 L1000,1000 L0,1000 Z"
+                ]
+              }}
+              transition={{
+                repeat: Infinity,
+                duration: 15,
+                ease: "easeInOut"
+              }}
             />
-            <path 
+            <motion.path 
               d="M0,600 C200,550 400,700 600,550 C800,400 1000,500 1000,500 L1000,1000 L0,1000 Z" 
               fill="url(#gradient)" 
               opacity="0.1"
+              animate={{
+                d: [
+                  "M0,600 C200,550 400,700 600,550 C800,400 1000,500 1000,500 L1000,1000 L0,1000 Z",
+                  "M0,620 C200,530 400,720 600,530 C800,420 1000,500 1000,500 L1000,1000 L0,1000 Z",
+                  "M0,600 C200,550 400,700 600,550 C800,400 1000,500 1000,500 L1000,1000 L0,1000 Z"
+                ]
+              }}
+              transition={{
+                repeat: Infinity,
+                duration: 20,
+                ease: "easeInOut"
+              }}
             />
           </svg>
         </div>

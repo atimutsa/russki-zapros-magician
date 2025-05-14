@@ -6,8 +6,28 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer id="footer" className="bg-gray-900 text-gray-300 pt-16 pb-8">
-      <div className="container mx-auto px-4">
+    <footer id="footer" className="relative bg-gray-900 text-gray-300 pt-16 pb-8 overflow-hidden">
+      {/* Wavy background for footer */}
+      <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none">
+        <svg 
+          viewBox="0 0 1000 1000" 
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-full opacity-20"
+          preserveAspectRatio="none"
+        >
+          <path 
+            d="M0,100 C200,150 400,50 600,150 C800,250 1000,150 1000,150 L1000,1000 L0,1000 Z" 
+            fill="#6366f1" 
+          />
+          <path 
+            d="M0,200 C200,150 400,250 600,150 C800,50 1000,150 1000,150 L1000,1000 L0,1000 Z" 
+            fill="#8b5cf6" 
+            opacity="0.5"
+          />
+        </svg>
+      </div>
+      
+      <div className="container relative mx-auto px-4 z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <h3 className="text-2xl font-bold text-white mb-4">Тимлекс</h3>
