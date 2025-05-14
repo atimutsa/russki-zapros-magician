@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Mail, MessageSquare } from "lucide-react";
@@ -46,11 +45,19 @@ const Header = ({ openModal }: HeaderProps) => {
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center">
           <a href="/" className="flex items-center">
-            <img 
-              src="/lovable-uploads/058e03b5-8fb5-4bf5-bfed-e3786ee979d5.png" 
-              alt="Тимлекс" 
-              className="h-10 w-auto"
-            />
+            {isScrolled ? (
+              <img 
+                src="/lovable-uploads/c56da609-f699-4610-9756-0d7ef1421fea.png" 
+                alt="Тимлекс" 
+                className="h-10 w-auto"
+              />
+            ) : (
+              <img 
+                src="/lovable-uploads/058e03b5-8fb5-4bf5-bfed-e3786ee979d5.png" 
+                alt="Тимлекс" 
+                className="h-10 w-auto"
+              />
+            )}
           </a>
         </div>
 
