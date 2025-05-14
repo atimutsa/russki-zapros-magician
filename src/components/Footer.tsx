@@ -8,21 +8,28 @@ const Footer = () => {
   return (
     <footer id="footer" className="relative bg-gray-900 text-gray-300 pt-16 pb-8 overflow-hidden">
       {/* Wavy background for footer */}
-      <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none">
+      <div className="absolute inset-0 w-full h-full opacity-20 pointer-events-none">
         <svg 
-          viewBox="0 0 1000 1000" 
+          viewBox="0 0 1440 600" 
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full opacity-20"
+          className="w-full h-full absolute left-0 bottom-0"
           preserveAspectRatio="none"
+          style={{ minWidth: '100vw' }}
         >
           <path 
-            d="M0,100 C200,150 400,50 600,150 C800,250 1000,150 1000,150 L1000,1000 L0,1000 Z" 
+            d="M0,96 C120,64 240,32 360,32 C480,32 600,64 720,80 C840,96 960,96 1080,80 C1200,64 1320,32 1440,32 L1440,600 L0,600 Z" 
             fill="#6366f1" 
+            opacity="0.2"
           />
           <path 
-            d="M0,200 C200,150 400,250 600,150 C800,50 1000,150 1000,150 L1000,1000 L0,1000 Z" 
+            d="M0,192 C120,160 240,128 360,144 C480,160 600,224 720,224 C840,224 960,160 1080,128 C1200,96 1320,96 1440,128 L1440,600 L0,600 Z" 
             fill="#8b5cf6" 
-            opacity="0.5"
+            opacity="0.2"
+          />
+          <path 
+            d="M0,288 C120,320 240,352 360,336 C480,320 600,256 720,256 C840,256 960,320 1080,352 C1200,384 1320,384 1440,352 L1440,600 L0,600 Z" 
+            fill="#9b87f5" 
+            opacity="0.1"
           />
         </svg>
       </div>
