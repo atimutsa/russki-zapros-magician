@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { motion, useAnimationControls } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -9,31 +8,43 @@ interface HeroSectionProps {
 
 const HeroSection = ({ openModal }: HeroSectionProps) => {
   const [text, setText] = useState("");
-  const fullText = "ИИ-коммуникации для вашего бизнеса";
+  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
+  const phrases = [
+    "ИИ-коммуникации для вашего бизнеса",
+    "Автоматизация выполнения рутинных задач любой сложности",
+    "Автоматизация поиска клиентов и продаж для вашего бизнеса 24/7"
+  ];
   const controls = useAnimationControls();
 
-  // Typing effect with random pauses
+  // Typing effect with phrase cycling
   useEffect(() => {
     let currentIndex = 0;
-    const targetText = fullText;
+    const currentPhrase = phrases[currentPhraseIndex];
 
     const typeNextCharacter = () => {
-      if (currentIndex < targetText.length) {
-        setText(targetText.substring(0, currentIndex + 1));
+      if (currentIndex < currentPhrase.length) {
+        setText(currentPhrase.substring(0, currentIndex + 1));
         currentIndex++;
         
         // Random delay between 50ms and 150ms to simulate human typing
         const randomDelay = Math.floor(Math.random() * 100) + 50;
         setTimeout(typeNextCharacter, randomDelay);
       } else {
-        // Trigger the rest of the animations when typing is complete
-        controls.start({ opacity: 1, y: 0 });
+        // Show animations when first phrase is complete
+        if (currentPhraseIndex === 0) {
+          controls.start({ opacity: 1, y: 0 });
+        }
+        
+        // Wait 2 seconds before starting next phrase
+        setTimeout(() => {
+          setCurrentPhraseIndex((prevIndex) => (prevIndex + 1) % phrases.length);
+        }, 2000);
       }
     };
 
     // Start typing after a short delay
-    setTimeout(typeNextCharacter, 500);
-  }, [fullText, controls]);
+    setTimeout(typeNextCharacter, currentPhraseIndex === 0 ? 500 : 100);
+  }, [currentPhraseIndex, phrases, controls]);
 
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden w-full">
@@ -113,7 +124,7 @@ const HeroSection = ({ openModal }: HeroSectionProps) => {
       <div className="container mx-auto px-4 z-10 py-20">
         <div className="max-w-3xl mx-auto text-center">
           <h1 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white min-h-[120px] md:min-h-[140px] lg:min-h-[160px] flex items-center justify-center"
           >
             {text}
             <span className="animate-pulse">|</span>
