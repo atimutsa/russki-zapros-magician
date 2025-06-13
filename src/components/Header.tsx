@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Mail, MessageSquare } from "lucide-react";
@@ -69,9 +70,9 @@ const Header = ({ openModal }: HeaderProps) => {
               aria-label="Меню"
             >
               <div className="w-6 h-5 flex flex-col justify-between">
-                <span className={`w-full h-0.5 bg-primary transition-all ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-                <span className={`w-full h-0.5 bg-primary transition-all ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
-                <span className={`w-full h-0.5 bg-primary transition-all ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+                <span className={`w-full h-0.5 bg-white transition-all ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+                <span className={`w-full h-0.5 bg-white transition-all ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
+                <span className={`w-full h-0.5 bg-white transition-all ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
               </div>
             </button>
             
@@ -82,7 +83,7 @@ const Header = ({ openModal }: HeaderProps) => {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="text-lg font-medium hover:text-primary transition-colors"
+                      className="text-lg font-medium text-white hover:text-primary transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {item.name}
@@ -108,7 +109,7 @@ const Header = ({ openModal }: HeaderProps) => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-sm font-medium hover:text-primary transition-colors"
+                  className="text-sm font-medium text-white hover:text-primary transition-colors"
                 >
                   {item.name}
                 </a>
