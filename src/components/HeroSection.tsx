@@ -26,8 +26,8 @@ const HeroSection = ({ openModal }: HeroSectionProps) => {
         setText(currentPhrase.substring(0, currentIndex + 1));
         currentIndex++;
         
-        // Random delay between 50ms and 150ms to simulate human typing
-        const randomDelay = Math.floor(Math.random() * 100) + 50;
+        // Random delay between 80ms and 180ms to simulate human typing
+        const randomDelay = Math.floor(Math.random() * 100) + 80;
         setTimeout(typeNextCharacter, randomDelay);
       } else {
         // Show animations when first phrase is complete
@@ -35,10 +35,10 @@ const HeroSection = ({ openModal }: HeroSectionProps) => {
           controls.start({ opacity: 1, y: 0 });
         }
         
-        // Wait 2 seconds before starting next phrase
+        // Wait 4 seconds before starting next phrase
         setTimeout(() => {
           setCurrentPhraseIndex((prevIndex) => (prevIndex + 1) % phrases.length);
-        }, 2000);
+        }, 4000);
       }
     };
 
