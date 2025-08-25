@@ -12,7 +12,7 @@ const HeroSection = ({ openModal }: HeroSectionProps) => {
   const [isErasing, setIsErasing] = useState(false);
   const phrases = [
     "ИИ-коммуникации для вашего бизнеса",
-    "Автоматизация выполнения рутинных задач любой сложности",
+    "Автоматизация выполнения рутинных задач любой сложности", 
     "Автоматизация поиска клиентов и продаж для вашего бизнеса 24/7"
   ];
   const controls = useAnimationControls();
@@ -132,7 +132,7 @@ const HeroSection = ({ openModal }: HeroSectionProps) => {
           <h1 
             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white min-h-[120px] md:min-h-[140px] lg:min-h-[160px] flex items-center justify-center"
           >
-            {text}
+            <span>{text}</span>
             <span className="animate-pulse">|</span>
           </h1>
           
