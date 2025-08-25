@@ -152,7 +152,7 @@ const HeroSection = ({ openModal }: HeroSectionProps) => {
             <Button 
               onClick={openModal} 
               size="lg" 
-              className="text-lg px-8 py-6 rounded-full bg-white text-indigo-700 hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl"
+              className="text-base md:text-lg px-6 md:px-8 py-4 md:py-6 rounded-full bg-white text-indigo-700 hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl whitespace-normal leading-tight min-h-[3rem] md:min-h-[auto]"
             >
               Получить бесплатную консультацию
             </Button>
