@@ -132,8 +132,7 @@ const HeroSection = ({ openModal }: HeroSectionProps) => {
           <h1 
             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white min-h-[120px] md:min-h-[140px] lg:min-h-[160px] flex items-center justify-center"
           >
-            <span>{text}</span>
-            <span className="animate-pulse">|</span>
+            <span>{text}<span className="animate-pulse">|</span></span>
           </h1>
           
           <motion.p 
