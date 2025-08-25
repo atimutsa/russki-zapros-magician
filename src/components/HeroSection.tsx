@@ -9,6 +9,7 @@ interface HeroSectionProps {
 const HeroSection = ({ openModal }: HeroSectionProps) => {
   const [text, setText] = useState("");
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
+  const [isErasing, setIsErasing] = useState(false);
   const phrases = [
     "ИИ-коммуникации для вашего бизнеса",
     "Автоматизация выполнения рутинных задач любой сложности",
@@ -16,35 +17,40 @@ const HeroSection = ({ openModal }: HeroSectionProps) => {
   ];
   const controls = useAnimationControls();
 
-  // Typing effect with phrase cycling
+  // Typing effect with phrase cycling and erasing
   useEffect(() => {
-    let currentIndex = 0;
     const currentPhrase = phrases[currentPhraseIndex];
 
-    const typeNextCharacter = () => {
-      if (currentIndex < currentPhrase.length) {
-        setText(currentPhrase.substring(0, currentIndex + 1));
-        currentIndex++;
-        
-        // Random delay between 80ms and 180ms to simulate human typing
-        const randomDelay = Math.floor(Math.random() * 100) + 80;
-        setTimeout(typeNextCharacter, randomDelay);
+    if (isErasing) {
+      // Erasing logic
+      if (text.length > 0) {
+        setTimeout(() => {
+          setText(text.slice(0, -1));
+        }, 50);
+      } else {
+        // Finished erasing, start typing next phrase
+        setIsErasing(false);
+        setCurrentPhraseIndex((prevIndex) => (prevIndex + 1) % phrases.length);
+      }
+    } else {
+      // Typing logic
+      if (text.length < currentPhrase.length) {
+        setTimeout(() => {
+          setText(currentPhrase.substring(0, text.length + 1));
+        }, Math.floor(Math.random() * 100) + 80);
       } else {
         // Show animations when first phrase is complete
-        if (currentPhraseIndex === 0) {
+        if (currentPhraseIndex === 0 && text === phrases[0]) {
           controls.start({ opacity: 1, y: 0 });
         }
         
-        // Wait 4 seconds before starting next phrase
+        // Wait 4 seconds then start erasing
         setTimeout(() => {
-          setCurrentPhraseIndex((prevIndex) => (prevIndex + 1) % phrases.length);
+          setIsErasing(true);
         }, 4000);
       }
-    };
-
-    // Start typing after a short delay
-    setTimeout(typeNextCharacter, currentPhraseIndex === 0 ? 500 : 100);
-  }, [currentPhraseIndex, phrases, controls]);
+    }
+  }, [text, currentPhraseIndex, isErasing, phrases, controls]);
 
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden w-full">
