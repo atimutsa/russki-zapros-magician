@@ -8,13 +8,12 @@ const Footer = () => {
   return (
     <footer id="footer" className="relative bg-gray-900 text-gray-300 pt-16 pb-8 overflow-hidden">
       {/* Wavy background for footer */}
-      <div className="absolute inset-0 w-full h-full opacity-20 pointer-events-none">
+      <div className="absolute inset-0 w-screen h-full opacity-20 pointer-events-none left-1/2 -translate-x-1/2">
         <svg 
           viewBox="0 0 1440 600" 
           xmlns="http://www.w3.org/2000/svg"
           className="w-full h-full absolute left-0 bottom-0"
           preserveAspectRatio="none"
-          style={{ minWidth: '100vw' }}
         >
           <path 
             d="M0,96 C120,64 240,32 360,32 C480,32 600,64 720,80 C840,96 960,96 1080,80 C1200,64 1320,32 1440,32 L1440,600 L0,600 Z" 
