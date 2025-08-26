@@ -48,7 +48,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-3">
               <a
-                href="https://t.me/timlex_support" 
+                href="https://t.me/TeamlexBot" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 hover:bg-indigo-600 transition-colors"
@@ -56,7 +56,7 @@ const Footer = () => {
                 <MessageSquare className="h-5 w-5" />
               </a>
               <a
-                href="mailto:info@timlex.ru"
+                href="mailto:info@teamlex.ru"
                 className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 hover:bg-indigo-600 transition-colors"
               >
                 <Mail className="h-5 w-5" />
@@ -106,11 +106,11 @@ const Footer = () => {
               </li>
               <li className="flex items-start">
                 <Mail className="h-5 w-5 mr-2 mt-0.5" />
-                <a href="mailto:info@timlex.ru" className="hover:text-white transition-colors">info@timlex.ru</a>
+                <a href="mailto:info@teamlex.ru" className="hover:text-white transition-colors">info@teamlex.ru</a>
               </li>
               <li className="flex items-start">
                 <MessageSquare className="h-5 w-5 mr-2 mt-0.5" />
-                <a href="https://t.me/timlex_support" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">@timlex_support</a>
+                <a href="https://t.me/TeamlexBot" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">@TeamlexBot</a>
               </li>
             </ul>
           </div>
@@ -123,7 +123,7 @@ const Footer = () => {
             </div>
             
             <div className="text-gray-500">
-              <p>ООО "Тимлекс" | ИНН: 1234567890 | ОГРН: 1234567890123</p>
+              <p>ООО "Тимлекс" | ИНН: 3703025269 | ОГРН: 370301001</p>
             </div>
           </div>
         </div>
