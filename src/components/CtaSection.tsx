@@ -10,12 +10,13 @@ const CtaSection = ({ openModal }: CtaSectionProps) => {
   return (
     <section className="py-20 bg-gradient-to-r from-indigo-600 to-purple-600 text-white relative overflow-hidden">
       {/* Волновой фон */}
-      <div className="absolute inset-0 w-screen overflow-hidden left-1/2 -translate-x-1/2">
+      <div className="absolute inset-0 w-screen h-full left-1/2 -translate-x-1/2">
         <svg
-          className="absolute bottom-0 left-0 w-full h-48 transform"
+          className="absolute bottom-0 left-0 w-screen h-48 transform"
           viewBox="0 0 1440 320"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
         >
           <path
             fillOpacity="0.06"
@@ -24,10 +25,11 @@ const CtaSection = ({ openModal }: CtaSectionProps) => {
           />
         </svg>
         <svg
-          className="absolute bottom-0 left-0 w-full h-48 transform"
+          className="absolute bottom-0 left-0 w-screen h-48 transform"
           viewBox="0 0 1440 320"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
         >
           <path
             fillOpacity="0.08"
