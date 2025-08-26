@@ -124,7 +124,7 @@ const Header = ({ openModal }: HeaderProps) => {
                 Оставить заявку
               </Button>
               <a
-                href="https://t.me/timlex_support" 
+                href="https://t.me/TeamlexBot" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-10 h-10 rounded-full bg-secondary hover:bg-secondary/80 transition-colors"
@@ -132,7 +132,7 @@ const Header = ({ openModal }: HeaderProps) => {
                 <MessageSquare className="h-5 w-5" />
               </a>
               <a
-                href="mailto:info@timlex.ru"
+                href="mailto:info@teamlex.ru"
                 className="flex items-center justify-center w-10 h-10 rounded-full bg-secondary hover:bg-secondary/80 transition-colors"
               >
                 <Mail className="h-5 w-5" />
