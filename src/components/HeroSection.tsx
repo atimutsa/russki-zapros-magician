@@ -166,12 +166,12 @@ const HeroSection = ({ openModal }: HeroSectionProps) => {
           >
             <div className="text-left">
               <p className="text-sm text-gray-100">Работаем с</p>
-              <p className="text-xl font-semibold text-white">2020 года</p>
+              <p className="text-xl font-semibold text-white">2022 года</p>
             </div>
             <div className="w-px h-12 bg-white/30"></div>
             <div className="text-left">
               <p className="text-sm text-gray-100">Реализовали более</p>
-              <p className="text-xl font-semibold text-white">500 проектов</p>
+              <p className="text-xl font-semibold text-white">40 проектов</p>
             </div>
           </motion.div>
         </div>
