@@ -10,7 +10,7 @@ const CtaSection = ({ openModal }: CtaSectionProps) => {
   return (
     <section className="py-20 bg-gradient-to-r from-indigo-600 to-purple-600 text-white relative overflow-hidden">
       {/* Волновой фон */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 w-screen overflow-hidden left-1/2 -translate-x-1/2">
         <svg
           className="absolute bottom-0 left-0 w-full h-48 transform"
           viewBox="0 0 1440 320"
