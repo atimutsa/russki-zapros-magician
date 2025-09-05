@@ -70,14 +70,21 @@ const Integrations = () => {
           {integrations.map((integration) => (
             <motion.div 
               key={integration.id}
-              className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow w-full h-24 flex items-center justify-center"
+              className="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 w-full h-32 flex flex-col items-center justify-center group hover-scale"
               variants={item}
             >
-              <img 
-                src={integration.logo} 
-                alt={integration.name} 
-                className="max-h-12 max-w-full"
-              />
+              <div className="flex-1 flex items-center justify-center mb-2">
+                <img 
+                  src={integration.logo} 
+                  alt={integration.name} 
+                  className="max-h-10 max-w-full transition-transform duration-300 group-hover:scale-110"
+                />
+              </div>
+              <div className="text-center">
+                <span className="text-sm font-medium text-gray-700 group-hover:text-primary transition-colors duration-300">
+                  {integration.name}
+                </span>
+              </div>
             </motion.div>
           ))}
         </motion.div>
