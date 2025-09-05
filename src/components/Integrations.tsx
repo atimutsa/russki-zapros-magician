@@ -6,35 +6,30 @@ const Integrations = () => {
     {
       id: 1,
       name: "amoCRM",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/AmoCRM_logo.svg/2560px-AmoCRM_logo.svg.png",
+      logo: "https://www.amocrm.com/static/images/pages/logo/amocrm_logo.svg",
     },
     {
       id: 2,
       name: "Bitrix24",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Bitrix24_logos.svg/1280px-Bitrix24_logos.svg.png",
+      logo: "https://cdn.bitrix24.com/bitrix/images/logo/bitrix24_logo.svg",
     },
     {
       id: 3,
-      name: "Tilda",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Tilda_publishing_logo.svg/1280px-Tilda_publishing_logo.svg.png",
-    },
-    {
-      id: 4,
       name: "WhatsApp",
       logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1022px-WhatsApp.svg.png",
     },
     {
-      id: 5,
+      id: 4,
       name: "Avito",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/9/97/Avito.ru_logo.svg",
+      logo: "https://www.avito.ru/s/cc/patterns/img/avito-logo.svg",
     },
     {
-      id: 6,
+      id: 5,
       name: "VK",
       logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/VK_Compact_Logo_%282021-present%29.svg/2048px-VK_Compact_Logo_%282021-present%29.svg.png",
     },
     {
-      id: 7,
+      id: 6,
       name: "Telegram",
       logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/2048px-Telegram_logo.svg.png",
     },
@@ -66,7 +61,7 @@ const Integrations = () => {
         </div>
         
         <motion.div 
-          className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 items-center justify-items-center"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-center justify-items-center"
           variants={container}
           initial="hidden"
           whileInView="show"
