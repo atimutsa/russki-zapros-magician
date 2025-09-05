@@ -6,12 +6,12 @@ const Integrations = () => {
     {
       id: 1,
       name: "amoCRM",
-      logo: "https://www.amocrm.com/static/images/pages/logo/amocrm_logo.svg",
+      logo: "https://logos-world.net/wp-content/uploads/2021/02/AmoCRM-Logo.png",
     },
     {
       id: 2,
       name: "Bitrix24",
-      logo: "https://cdn.bitrix24.com/bitrix/images/logo/bitrix24_logo.svg",
+      logo: "https://logos-world.net/wp-content/uploads/2021/02/Bitrix24-Logo.png",
     },
     {
       id: 3,
@@ -21,7 +21,7 @@ const Integrations = () => {
     {
       id: 4,
       name: "Avito",
-      logo: "https://www.avito.ru/s/cc/patterns/img/avito-logo.svg",
+      logo: "https://logos-world.net/wp-content/uploads/2020/11/Avito-Logo.png",
     },
     {
       id: 5,
