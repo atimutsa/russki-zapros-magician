@@ -6,32 +6,32 @@ const Integrations = () => {
     {
       id: 1,
       name: "amoCRM",
-      logo: "https://logos-world.net/wp-content/uploads/2021/02/AmoCRM-Logo.png",
+      logo: "/lovable-uploads/7018e875-d8e9-4e0a-b6b4-b052ecafe406.png",
     },
     {
       id: 2,
       name: "Bitrix24",
-      logo: "https://logos-world.net/wp-content/uploads/2021/02/Bitrix24-Logo.png",
+      logo: "/lovable-uploads/5336fc22-6979-45c6-829c-b8fab478ec90.png",
     },
     {
       id: 3,
       name: "WhatsApp",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1022px-WhatsApp.svg.png",
+      logo: "/lovable-uploads/d6f85d4c-6e6f-4493-92e9-8fd81809bb2c.png",
     },
     {
       id: 4,
       name: "Avito",
-      logo: "https://logos-world.net/wp-content/uploads/2020/11/Avito-Logo.png",
+      logo: "/lovable-uploads/428a098d-4f04-40b5-97cd-25a76b632c9a.png",
     },
     {
       id: 5,
       name: "VK",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/VK_Compact_Logo_%282021-present%29.svg/2048px-VK_Compact_Logo_%282021-present%29.svg.png",
+      logo: "/lovable-uploads/26cc1921-36e3-488c-ac8c-4258e5bec2e3.png",
     },
     {
       id: 6,
       name: "Telegram",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/2048px-Telegram_logo.svg.png",
+      logo: "/lovable-uploads/d236c1e9-3798-496e-bb16-7bd809ca8f04.png",
     },
   ];
 
