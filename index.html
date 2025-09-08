@@ -35,6 +35,24 @@
     <noscript><div><img src="https://mc.yandex.ru/watch/53420689" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika noscript -->
     <div id="root"></div>
+    
+    <!-- Chat Widget -->
+    <div id="chat-client" style="z-index: 1000000;"></div>
+    <script src="https://twin24.ai/app/chat-client/widget.js" charset="utf-8"></script>
+    <script>
+      appChatClient({
+        chatId: 'af5e5ee3-5ad9-40f5-a44c-378d5d4b9429',
+      }, {
+        host: document.getElementById('chat-client'),
+        injectStyles: `
+          [data-id=chat-host] {
+            bottom: 8px;
+            right: 8px;
+            align-items: end;
+          }`,    
+      })
+    </script>
+    
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
