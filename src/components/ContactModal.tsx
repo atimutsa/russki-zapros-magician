@@ -16,9 +16,19 @@ interface ContactModalProps {
 const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [telegram, setTelegram] = useState("");
   const [comment, setComment] = useState("");
   const [isAgree, setIsAgree] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleTelegramChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let value = e.target.value;
+    // Если пользователь ввел текст и не начал с @, добавляем @
+    if (value && !value.startsWith('@')) {
+      value = '@' + value;
+    }
+    setTelegram(value);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,6 +45,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
       toast.success("Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.");
       setName("");
       setPhone("");
+      setTelegram("");
       setComment("");
       setIsAgree(false);
       setIsSubmitting(false);
@@ -71,6 +82,15 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
               placeholder="+7 (___) ___-__-__"
               required
               type="tel"
+            />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="telegram">Ник в Telegram</Label>
+            <Input
+              id="telegram"
+              value={telegram}
+              onChange={handleTelegramChange}
+              placeholder="@username"
             />
           </div>
           <div className="space-y-2">
