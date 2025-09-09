@@ -124,11 +124,6 @@ const AudioDemo = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-sm text-muted-foreground bg-muted/30 inline-block px-4 py-2 rounded-lg">
-            💡 <strong>Совет:</strong> Загрузите ваши аудио файлы в папку <code className="bg-background px-2 py-1 rounded text-xs">public/audio/</code> и обновите пути в компоненте
-          </p>
-        </div>
       </div>
     </section>
   );
