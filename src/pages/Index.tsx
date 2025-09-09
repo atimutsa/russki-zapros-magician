@@ -6,6 +6,7 @@ import TrustBadges from "@/components/TrustBadges";
 import WhyUs from "@/components/WhyUs";
 import Services from "@/components/Services";
 import CaseStudies from "@/components/CaseStudies";
+import AudioDemo from "@/components/AudioDemo";
 import Integrations from "@/components/Integrations";
 import Testimonials from "@/components/Testimonials";
 import CtaSection from "@/components/CtaSection";
@@ -53,6 +54,7 @@ const Index = () => {
         <WhyUs />
         <Services />
         <CaseStudies />
+        <AudioDemo />
         <Integrations />
         <Testimonials />
         <CtaSection openModal={openModal} />
