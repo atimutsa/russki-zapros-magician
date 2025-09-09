@@ -30,7 +30,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
     setTelegram(value);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!name || !phone || !isAgree) {
@@ -40,17 +40,39 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
     
     setIsSubmitting(true);
     
-    // Имитация отправки формы
-    setTimeout(() => {
-      toast.success("Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.");
-      setName("");
-      setPhone("");
-      setTelegram("");
-      setComment("");
-      setIsAgree(false);
+    const formData = {
+      name,
+      phone,
+      telegram: telegram || undefined, // Не отправляем пустое поле
+      comment: comment || undefined,   // Не отправляем пустое поле
+      timestamp: new Date().toISOString()
+    };
+
+    try {
+      const response = await fetch('https://webhook.site/eb743f0f-e3ae-495a-8596-a2046e03635a', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        toast.success("Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.");
+        setName("");
+        setPhone("");
+        setTelegram("");
+        setComment("");
+        setIsAgree(false);
+        onClose();
+      } else {
+        throw new Error('Ошибка отправки');
+      }
+    } catch (error) {
+      toast.error("Произошла ошибка при отправке заявки. Попробуйте еще раз.");
+    } finally {
       setIsSubmitting(false);
-      onClose();
-    }, 1000);
+    }
   };
 
   return (
