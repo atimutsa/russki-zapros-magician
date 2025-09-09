@@ -8,7 +8,7 @@ import Services from "@/components/Services";
 import CaseStudies from "@/components/CaseStudies";
 import AudioDemo from "@/components/AudioDemo";
 import Integrations from "@/components/Integrations";
-import Testimonials from "@/components/Testimonials";
+
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 import ContactModal from "@/components/ContactModal";
@@ -56,7 +56,7 @@ const Index = () => {
         <CaseStudies />
         <AudioDemo />
         <Integrations />
-        <Testimonials />
+        
         <CtaSection openModal={openModal} />
       </main>
 
