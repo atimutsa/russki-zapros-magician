@@ -132,26 +132,57 @@ const PricingSection = ({ onOpenModal }: { onOpenModal: () => void }) => {
         </div>
 
         <div className="text-center mt-16">
-          <div className="bg-muted/50 rounded-lg p-6 max-w-4xl mx-auto mb-8">
-            <h3 className="font-semibold mb-3">Автоматический обзвон</h3>
-            <div className="grid md:grid-cols-2 gap-4 text-sm">
-              <div>
-                <p className="font-medium">Стоимость: от 0,14 ₽/сек</p>
-                <p className="text-muted-foreground">Посекундная тарификация</p>
+          <div className="relative bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 rounded-2xl p-8 max-w-4xl mx-auto mb-8 border border-primary/20">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl" />
+            <div className="relative">
+              <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                Автоматический обзвон
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
+                <div className="bg-card/50 backdrop-blur-sm rounded-xl p-4 border border-primary/10">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
+                      <span className="text-primary font-bold text-sm">₽</span>
+                    </div>
+                    <p className="font-semibold">Стоимость: от 0,14 ₽/сек</p>
+                  </div>
+                  <p className="text-sm text-muted-foreground">Посекундная тарификация</p>
+                </div>
+                <div className="bg-card/50 backdrop-blur-sm rounded-xl p-4 border border-secondary/10">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-8 h-8 bg-secondary/20 rounded-full flex items-center justify-center">
+                      <Check className="w-4 h-4 text-secondary" />
+                    </div>
+                    <p className="font-semibold">Без лишних трат</p>
+                  </div>
+                  <p className="text-sm text-muted-foreground">Оплата только за успешные звонки</p>
+                </div>
               </div>
-              <div>
-                <p className="font-medium">Без лишних трат</p>
-                <p className="text-muted-foreground">Оплата только за успешные звонки</p>
+              
+              <div className="bg-gradient-to-r from-primary/20 to-secondary/20 rounded-xl p-4 mb-6">
+                <p className="text-sm font-medium text-center">
+                  💡 <strong>Пример:</strong> Звонок длительностью 2 минуты = 16,8 ₽
+                </p>
               </div>
             </div>
           </div>
           
-          <p className="text-muted-foreground mb-4">
-            Нужно что-то особенное? Обсудим индивидуальные условия
-          </p>
-          <Button onClick={onOpenModal} variant="ghost" size="lg">
-            Получить консультацию
-          </Button>
+          <div className="space-y-4">
+            <p className="text-lg font-medium">
+              Нужно что-то особенное?
+            </p>
+            <p className="text-muted-foreground">
+              Обсудим индивидуальные условия и найдем оптимальное решение для вашего бизнеса
+            </p>
+            <Button 
+              onClick={onOpenModal} 
+              variant="default" 
+              size="lg"
+              className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white font-semibold px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              Получить консультацию
+            </Button>
+          </div>
         </div>
       </div>
     </section>
