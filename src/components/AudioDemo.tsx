@@ -28,6 +28,24 @@ const audioSamples: AudioSample[] = [
     name: "Голос ассистента - Мария", 
     description: "Приятный голос для виртуального помощника",
     audioUrl: "/audio/assistant-voice-sample.mp3" // Загрузите файл сюда
+  },
+  {
+    id: "sales-voice",
+    name: "Голос продаж - Дмитрий",
+    description: "Энергичный голос для увеличения конверсии продаж",
+    audioUrl: "/audio/sales-voice-sample.mp3" // Загрузите файл сюда
+  },
+  {
+    id: "support-voice",
+    name: "Служба поддержки - Елена",
+    description: "Терпеливый и понимающий голос для решения проблем",
+    audioUrl: "/audio/support-voice-sample.mp3" // Загрузите файл сюда
+  },
+  {
+    id: "young-voice",
+    name: "Молодежный голос - Никита",
+    description: "Современный и динамичный голос для молодой аудитории",
+    audioUrl: "/audio/young-voice-sample.mp3" // Загрузите файл сюда
   }
 ];
 
