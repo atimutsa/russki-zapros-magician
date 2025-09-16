@@ -39,19 +39,41 @@
     
     <!-- Chat Widget -->
     <div id="chat-client" style="z-index: 1000000;"></div>
-    <script src="https://twin24.ai/app/chat-client/widget.js" charset="utf-8"></script>
     <script>
-      appChatClient({
-        chatId: 'af5e5ee3-5ad9-40f5-a44c-378d5d4b9429',
-      }, {
-        host: document.getElementById('chat-client'),
-        injectStyles: `
+      (function () {
+        const host = document.getElementById('chat-client');
+        const injectStyles = `
           [data-id=chat-host] {
             bottom: 8px;
             right: 8px;
             align-items: end;
-          }`,    
-      })
+          }
+        `;
+
+        function initChat() {
+          try {
+            if (typeof window.appChatClient === 'function') {
+              window.appChatClient(
+                { chatId: 'af5e5ee3-5ad9-40f5-a44c-378d5d4b9429' },
+                { host, injectStyles }
+              );
+            }
+          } catch (e) {
+            console.warn('Chat widget init failed:', e);
+          }
+        }
+
+        const s = document.createElement('script');
+        s.src = 'https://twin24.ai/app/chat-client/widget.js';
+        s.async = true;
+        s.charset = 'utf-8';
+        s.onload = initChat;
+        s.onerror = () => console.warn('Chat widget failed to load');
+        document.body.appendChild(s);
+
+        // Fallback in case onload doesn't fire
+        setTimeout(initChat, 3000);
+      })();
     </script>
     
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
