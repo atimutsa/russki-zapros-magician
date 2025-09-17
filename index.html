@@ -40,40 +40,50 @@
     <!-- Chat Widget -->
     <div id="chat-client" style="z-index: 1000000;"></div>
     <script>
-      (function () {
-        const host = document.getElementById('chat-client');
-        const injectStyles = `
-          [data-id=chat-host] {
-            bottom: 8px;
-            right: 8px;
-            align-items: end;
-          }
-        `;
-
-        function initChat() {
-          try {
-            if (typeof window.appChatClient === 'function') {
-              window.appChatClient(
-                { chatId: 'af5e5ee3-5ad9-40f5-a44c-378d5d4b9429' },
-                { host, injectStyles }
-              );
+        const isLovablePreview = /(?:\.lovable\.app|lovableproject\.com)$/i.test(location.hostname);
+        if (isLovablePreview) {
+          console.info('Chat widget disabled in Lovable preview to prevent white screen.');
+        } else {
+          const host = document.getElementById('chat-client');
+          const injectStyles = `
+            [data-id=chat-host] {
+              bottom: 8px;
+              right: 8px;
+              align-items: end;
             }
-          } catch (e) {
-            console.warn('Chat widget init failed:', e);
+          `;
+
+          function initChat() {
+            try {
+              if (typeof window.appChatClient === 'function') {
+                window.appChatClient(
+                  { chatId: 'af5e5ee3-5ad9-40f5-a44c-378d5d4b9429' },
+                  { host, injectStyles }
+                );
+              }
+            } catch (e) {
+              console.warn('Chat widget init failed:', e);
+            }
           }
+
+          const s = document.createElement('script');
+          s.src = 'https://twin24.ai/app/chat-client/widget.js';
+          s.async = true;
+          s.charset = 'utf-8';
+          s.addEventListener('load', initChat, { once: true });
+          s.addEventListener('error', () => console.warn('Chat widget failed to load'), { once: true });
+
+          const loadScript = () => document.body.appendChild(s);
+          if ('requestIdleCallback' in window) {
+            // Defer loading to avoid blocking preview/app
+            requestIdleCallback(loadScript, { timeout: 2000 });
+          } else {
+            setTimeout(loadScript, 0);
+          }
+
+          // Fallback in case onload doesn't fire
+          setTimeout(initChat, 4000);
         }
-
-        const s = document.createElement('script');
-        s.src = 'https://twin24.ai/app/chat-client/widget.js';
-        s.async = true;
-        s.charset = 'utf-8';
-        s.onload = initChat;
-        s.onerror = () => console.warn('Chat widget failed to load');
-        document.body.appendChild(s);
-
-        // Fallback in case onload doesn't fire
-        setTimeout(initChat, 3000);
-      })();
     </script>
     
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
