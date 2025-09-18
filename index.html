@@ -42,7 +42,9 @@
     <script>
         const isLovablePreview = /(?:\.lovable\.app|lovableproject\.com)$/i.test(location.hostname);
         if (isLovablePreview) {
-          console.info('Chat widget disabled in Lovable preview to prevent white screen.');
+          console.info('Chat widget and container disabled in Lovable preview to prevent conflicts with Visual Edits.');
+          // Hide chat container completely in Lovable environment
+          document.getElementById('chat-client').style.display = 'none';
         } else {
           const host = document.getElementById('chat-client');
           const injectStyles = `
