@@ -78,8 +78,8 @@ const Header = ({ openModal }: HeaderProps) => {
             </button>
             
             {isMobileMenuOpen && (
-              <div className="fixed inset-0 top-[60px] bg-white z-50 p-4 shadow-lg border-t border-gray-200">
-                <nav className="flex flex-col gap-6 py-4">
+              <div className="fixed inset-0 bg-white z-50 shadow-lg">
+                <nav className="flex flex-col gap-6 py-8 px-4 pt-20">
                   {menuItems.map((item) => (
                     <a
                       key={item.name}
