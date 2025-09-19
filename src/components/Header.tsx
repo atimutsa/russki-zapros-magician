@@ -79,7 +79,24 @@ const Header = ({ openModal }: HeaderProps) => {
             
             {isMobileMenuOpen && (
               <div className="fixed inset-0 bg-white z-50 shadow-lg">
-                <nav className="flex flex-col gap-6 py-8 px-4 pt-20 bg-white w-full h-full min-h-screen">
+                <div className="flex justify-between items-center p-4 border-b">
+                  <img 
+                    src="/lovable-uploads/c56da609-f699-4610-9756-0d7ef1421fea.png" 
+                    alt="Тимлекс" 
+                    className="h-10 w-auto"
+                  />
+                  <button 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="p-2"
+                    aria-label="Закрыть меню"
+                  >
+                    <div className="w-6 h-5 flex flex-col justify-center items-center">
+                      <span className="w-full h-0.5 bg-primary rotate-45 absolute"></span>
+                      <span className="w-full h-0.5 bg-primary -rotate-45 absolute"></span>
+                    </div>
+                  </button>
+                </div>
+                <nav className="flex flex-col gap-6 py-8 px-4 bg-white w-full h-full min-h-screen">
                   {menuItems.map((item) => (
                     <a
                       key={item.name}
