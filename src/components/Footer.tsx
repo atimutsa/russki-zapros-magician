@@ -68,16 +68,16 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-white mb-4">Услуги</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#services" className="hover:text-white transition-colors">Голосовой бот</a>
+                <a href="/#services" className="hover:text-white transition-colors">Голосовой бот</a>
               </li>
               <li>
-                <a href="#services" className="hover:text-white transition-colors">Чат-бот</a>
+                <a href="/#services" className="hover:text-white transition-colors">Чат-бот</a>
               </li>
               <li>
-                <a href="#services" className="hover:text-white transition-colors">Лидогенерация</a>
+                <a href="/#services" className="hover:text-white transition-colors">Лидогенерация</a>
               </li>
               <li>
-                <a href="#services" className="hover:text-white transition-colors">Интеграции с CRM</a>
+                <a href="/#services" className="hover:text-white transition-colors">Интеграции с CRM</a>
               </li>
             </ul>
           </div>
@@ -86,10 +86,10 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-white mb-4">О компании</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#whyus" className="hover:text-white transition-colors">Почему мы</a>
+                <a href="/#whyus" className="hover:text-white transition-colors">Почему мы</a>
               </li>
               <li>
-                <a href="#cases" className="hover:text-white transition-colors">Кейсы</a>
+                <a href="/#cases" className="hover:text-white transition-colors">Кейсы</a>
               </li>
               <li>
                 <Link to="/policy" className="hover:text-white transition-colors">Политика конфиденциальности</Link>

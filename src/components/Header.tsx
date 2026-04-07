@@ -29,11 +29,11 @@ const Header = ({ openModal }: HeaderProps) => {
   };
 
   const menuItems = [
-    { name: "Возможности", href: "#services" },
+    { name: "Возможности", href: "/#services" },
     { name: "Лидогенерация", href: "/leadgen" },
-    { name: "Кейсы", href: "#cases" },
-    { name: "О нас", href: "#whyus" },
-    { name: "Контакты", href: "#footer" },
+    { name: "Кейсы", href: "/#cases" },
+    { name: "О нас", href: "/#whyus" },
+    { name: "Контакты", href: "/#footer" },
   ];
 
   return (
