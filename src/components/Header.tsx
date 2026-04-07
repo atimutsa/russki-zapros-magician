@@ -30,6 +30,7 @@ const Header = ({ openModal }: HeaderProps) => {
 
   const menuItems = [
     { name: "Возможности", href: "#services" },
+    { name: "Leadgen", href: "/leadgen" },
     { name: "Кейсы", href: "#cases" },
     { name: "О нас", href: "#whyus" },
     { name: "Контакты", href: "#footer" },
