@@ -1,6 +1,5 @@
+import { useEffect } from "react";
 
-import { useEffect, useState } from "react";
-import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import TrustBadges from "@/components/TrustBadges";
 import WhyUs from "@/components/WhyUs";
@@ -9,46 +8,39 @@ import CaseStudies from "@/components/CaseStudies";
 import AudioDemo from "@/components/AudioDemo";
 import PricingSection from "@/components/PricingSection";
 import Integrations from "@/components/Integrations";
-
 import CtaSection from "@/components/CtaSection";
-import Footer from "@/components/Footer";
-import ContactModal from "@/components/ContactModal";
 
-const Index = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+type IndexProps = {
+  openModal: () => void;
+};
 
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
-
+const Index = ({ openModal }: IndexProps) => {
   // Плавный скролл к якорям
   useEffect(() => {
     const handleAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       const anchor = target.closest('a[href^="#"]');
-      
+
       if (anchor) {
         e.preventDefault();
-        const targetId = anchor.getAttribute('href');
-        if (targetId && targetId !== '#') {
+        const targetId = anchor.getAttribute("href");
+        if (targetId && targetId !== "#") {
           const targetElement = document.querySelector(targetId);
           if (targetElement) {
             window.scrollTo({
               top: targetElement.getBoundingClientRect().top + window.scrollY - 80,
-              behavior: 'smooth'
+              behavior: "smooth",
             });
           }
         }
       }
     };
 
-    document.addEventListener('click', handleAnchorClick);
-    return () => document.removeEventListener('click', handleAnchorClick);
+    document.addEventListener("click", handleAnchorClick);
+    return () => document.removeEventListener("click", handleAnchorClick);
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header openModal={openModal} />
-      
       <main>
         <HeroSection openModal={openModal} />
         <TrustBadges />
@@ -58,14 +50,8 @@ const Index = () => {
         <AudioDemo />
         <PricingSection onOpenModal={openModal} />
         <Integrations />
-        
         <CtaSection openModal={openModal} />
       </main>
-
-      <Footer />
-      
-      <ContactModal isOpen={isModalOpen} onClose={closeModal} />
-    </div>
   );
 };
 
