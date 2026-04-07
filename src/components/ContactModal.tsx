@@ -49,7 +49,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
     };
 
     try {
-      const response = await fetch('https://webhook.site/eb743f0f-e3ae-495a-8596-a2046e03635a', {
+      const response = await fetch('https://n8n.teamlex.ru/webhook/46eff0a8-4be2-4ca8-b8d2-5dd8397f3e83', {
         method: 'POST',
         mode: 'no-cors', // Обходим CORS ограничения
         headers: {
