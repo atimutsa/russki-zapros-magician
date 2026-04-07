@@ -7,6 +7,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
+import Header from "@/components/Header";
 
 import {
     Sparkles,
@@ -25,13 +26,20 @@ type LeadgenProps = {
 
 export default function Leadgen({ openModal }: LeadgenProps) {
     const scrollTo = (id: string) => {
+        // Если мы не на главной, перенаправляем на главную с якорем
+        if (window.location.pathname !== '/') {
+            window.location.href = `/#${id}`;
+            return;
+        }
         const el = document.getElementById(id);
         if (!el) return;
         el.scrollIntoView({ behavior: "smooth", block: "start" });
     };
 
     return (
-        <main className="min-h-screen">
+        <div className="min-h-screen flex flex-col">
+            <Header openModal={openModal} />
+            <main className="flex-grow">
             {/* HERO (цвета как на главной) */}
             <section className="relative overflow-hidden">
                 {/* фон */}
@@ -509,6 +517,7 @@ export default function Leadgen({ openModal }: LeadgenProps) {
                     </CardContent>
                 </Card>
             </section>
-        </main>
+            </main>
+        </div>
     );
 }
